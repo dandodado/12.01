@@ -15,7 +15,7 @@ calculateAttraction(m) {
     let distance = force.mag();
     distance = constrain(distance, 5, 25);
     force.normalize();
-    let strength = (this.mass * m.mass/200) / (distance * distance);
+    let strength = (this.mass * m.mass) / (distance * distance);
     force.mult(strength);
     return force;
   }

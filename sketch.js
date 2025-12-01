@@ -17,6 +17,8 @@ function draw() {
     ball.show();
     let drag = ball.calculateDrag();
     ball.addForce(drag);
+    let returnForce = ball.calculateReturnForce(0.05);
+    ball.addForce(returnForce);
     if(dist(meteor.pos.x, meteor.pos.y, ball.pos.x, ball.pos.y) < 150){
     let force = meteor.calculateAttraction(ball);
     ball.addForce(force);

@@ -2,6 +2,7 @@ class Ball {
    
     constructor(x, y, w) {
 this.pos = createVector( x, y);
+this.origin = createVector(x, y);
 this.vel = createVector(0, 0);
 this.acc = createVector(0, 0);
 this.mass = w;
@@ -30,6 +31,11 @@ dragForce.mult(dragMagnitude);
 return dragForce;
 
 
+}
+calculateReturnForce(k) {
+  let force = p5.Vector.sub(this.origin, this.pos);
+  force.mult(k);
+  return force;
 }
 
 }
