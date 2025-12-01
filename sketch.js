@@ -15,6 +15,14 @@ function draw() {
   background(220);
   for (let ball of balls) {
     ball.show();
+    let drag = ball.calculateDrag();
+    ball.addForce(drag);
+    if(dist(meteor.pos.x, meteor.pos.y, ball.pos.x, ball.pos.y) < 150){
+    let force = meteor.calculateAttraction(ball);
+    ball.addForce(force);
+    }
+    ball.update();
   }
 meteor.show();
 }
+
