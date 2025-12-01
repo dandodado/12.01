@@ -1,4 +1,5 @@
 balls = [];
+let meteor;
 let w =20;
 function setup() {
   createCanvas(400, 400);
@@ -7,6 +8,7 @@ function setup() {
       balls.push(new Ball(x, y, w));
     }
   }
+  meteor = new Meteor();
 }
 
 function draw() {
@@ -14,5 +16,5 @@ function draw() {
   for (let ball of balls) {
     ball.show();
   }
-
+meteor.show();
 }
