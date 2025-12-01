@@ -7,7 +7,7 @@ constructor() {
 }
 show() {
     fill(200,0,0);
-    ellipse(this.pos.x, this.pos.y, this.mass, this.mass);
+    ellipse(this.pos.x, this.pos.y, this.mass/2, this.mass/2);
 
 }
 calculateAttraction(m) {
@@ -18,6 +18,10 @@ calculateAttraction(m) {
     let strength = (this.mass * m.mass) / (distance * distance);
     force.mult(strength);
     return force;
+  }
+  move() {
+    this.pos.x = mouseX;
+    this.pos.y = mouseY;
   }
 
 
