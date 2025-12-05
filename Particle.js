@@ -1,4 +1,4 @@
-class Ball {
+class Particle {
    
     constructor(x, y, w) {
 this.pos = createVector( x, y);
